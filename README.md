@@ -26,12 +26,12 @@ Orange: 700
 
 Please use (preferably) Python, or Java to complete this exercise.
 
-**You are free to use any data processing frameworks or libraries as you like.**
+**You are free to use any data processing frameworks or libraries as you like. But ensure that you are confident in their usage to be able to apply them beyond the scope of your submission.** You will need to enhance your code in a future exercise to solve some other problems, but please remain focussed on the task at hand.
+
+Aside from the practicalities of the exercise, we will be assessing your approach to software engineering. **Most of all, we'd really love to see a clean, tested, codebase, with a maintainable design.**
 
 Please supply a git repository where we can find your submission, and provide instructions to run your code to produce the output required.
 
-Aside from the practicalities of the exercise, we will be assessing your approach to software engineering... but please don't spend longer than a couple of hours on this task.
-
-Most of all, we'd really love to see a clean, tested, codebase, with a maintainable design. And expect to extend your submission in a future exercise.
+Please do try to limit yourself to no more than two hours for this task.
 
 Good luck!
