@@ -1,7 +1,7 @@
 
 import pandas as pd
 from datetime import date
-from .order import get_order_details
+from order import get_order_details
 
 
 def summarise_order(

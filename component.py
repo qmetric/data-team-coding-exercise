@@ -6,12 +6,13 @@ from dataclasses import dataclass
 
 @dataclass(frozen=True)
 class Component:
+    """Class to represent a component."""
     componentId: str
     colour: str
     costPrice: float
 
 
-def load_components(file_path: str = "../data/components.csv") -> pd.DataFrame:
+def load_components(file_path: str = "data/components.csv") -> pd.DataFrame:
     """Load components file into a dataframe.
 
     Each row is first validated against the Component model to ensure data integrity.

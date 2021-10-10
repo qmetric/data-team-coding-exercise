@@ -8,12 +8,13 @@ from datetime import datetime
 
 @dataclass
 class Order:
+    """Class to represent an order."""
     timestamp: datetime.timestamp
     orderId: str
     units: Dict[str, int]
 
 
-def load_orders(file_path: str = "../data/orders.json.txt") -> pd.DataFrame:
+def load_orders(file_path: str = "data/orders.json.txt") -> pd.DataFrame:
     """Load orders from file.
 
     Each order is validated against the Order model to ensure data integrity.
@@ -42,14 +43,18 @@ def load_orders(file_path: str = "../data/orders.json.txt") -> pd.DataFrame:
 
 
 def get_order_details(orders: pd.DataFrame) -> pd.DataFrame:
+    """Get dataframe of order details from a given set of orders.
 
-    order_details = orders.units.to_dict().values()
+    Args:
+        orders: A set of orders.
+
+    Returns:
+        (pd.DataFrame): A dataframe of order details.
+    """
+
+    order_details = orders.units.to_dict().values()  # retrieve values from the units column
     order_list = [
         {"componentId": component, "volume": order[component]}
         for order in order_details for component in order
     ]
     return pd.DataFrame(order_list)
-
-
-if __name__ == "__main__":
-    print(load_orders())
