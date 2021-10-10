@@ -35,6 +35,9 @@ def load_orders(file_path: str = "data/orders.json.txt") -> pd.DataFrame:
             order = Order(**data)
             orders_list.append(order)
 
+    if not orders_list:
+        raise ValueError(f"No orders found in {file_path}")
+
     orders = pd.DataFrame([order.__dict__ for order in orders_list])  # create a dataframe of orders
     orders["timestamp"] = pd.to_datetime(orders["timestamp"])
     orders.set_index(keys="orderId", inplace=True)

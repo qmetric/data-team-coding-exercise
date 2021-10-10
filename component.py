@@ -34,6 +34,9 @@ def load_components(file_path: str = "data/components.csv") -> pd.DataFrame:
             data = {column_name: value for value, column_name in zip(row, headers)}
             components_list.append(Component(**data))
 
+    if not components_list:
+        raise ValueError(f"No components found in {file_path}")
+
     components = pd.DataFrame([component.__dict__ for component in components_list])  # create a dataframe
     components.set_index(keys="componentId", inplace=True)  # set the index to componentId for faster lookups
     
